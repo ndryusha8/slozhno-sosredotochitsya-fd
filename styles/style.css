@@ -20,15 +20,15 @@
   grid-template-rows: repeat(3, 1fr);
   block-size:100vh;
   gap: 10px;
+}
 
-  &::before {
-    content: var(--text-content);
-    position: absolute;
-    top: 23px;
-    right: 48px;
-    display: var(--display-vision);
-    color: var(--text-primary);
-  }
+.header::before {
+  content: var(--text-content);
+  position: absolute;
+  top: 23px;
+  right: 48px;
+  display: var(--display-vision);
+  color: var(--text-primary);
 }
 
 .header::after,
@@ -90,7 +90,7 @@
 
 .header__theme-menu-button {
   border: none;
-  padding: 1.5px 13px;
+  padding: 2px 13px;
   color: var(--tertiary);
   font-size: 18px;
   line-height: 100%;
@@ -121,10 +121,8 @@
   font-weight: var(--weight-font-bold);
   font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   line-height: 83%;
-  letter-spacing: 10px;
   text-shadow: 4px 4px 0 var(--primary);
   block-size: min-content;
-  word-spacing: 40px;
 }
 
 .header__theme-text {
