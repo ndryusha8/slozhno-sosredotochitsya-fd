@@ -338,11 +338,6 @@
     padding-top: 50px;
   }
 
-  .main,
-  .footer {
-    margin-top: 40px;
-  }
-
   .header__theme-menu {
     padding-top: 32px;
   }
@@ -378,6 +373,11 @@
     min-inline-size: 100%;
   }
 
+  .main {
+    margin-top: 40px;
+    padding: 0 10px;
+  }
+
   .grid-columns,
   .main-section,
   .main-section-image-container {
@@ -409,6 +409,15 @@
   .main-section-image-container img {
     grid-column: auto;
     grid-row: auto;
+  }
+
+  .main-section:last-child,
+  .main-section-image-container {
+    gap: 10px !important;
+  }
+
+  .footer {
+    margin-top: 40px;
   }
 
   .footer-title {
