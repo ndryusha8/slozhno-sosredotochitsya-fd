@@ -305,7 +305,7 @@
     align-items: center;
     margin: 0;
   }
-  
+
   .main-section-item-what {
     grid-column: 1 / span 3;
   }
@@ -313,17 +313,17 @@
   .main-section-image-container {
     block-size: 80vh;
   }
-  
+
   .main-content-text {
     max-inline-size: 100%;
   }
-  
+
   .header__theme-text {
     max-width: 364px;
     margin-top: 40px;
   }
 
-  .main-section-item .main-content-text{
+  .main-section-item .main-content-text {
     max-inline-size: 472px;
   }
 }
@@ -332,6 +332,15 @@
   .header {
     gap: 0;
     padding: 0 10px;
+  }
+
+  .padding-top-80 {
+    padding-top: 50px;
+  }
+
+  .main,
+  .footer {
+    margin-top: 40px;
   }
 
   .header__theme-menu {
