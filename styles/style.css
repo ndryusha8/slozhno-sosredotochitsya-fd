@@ -18,7 +18,7 @@
   position: relative;
   display: grid;
   grid-template-rows: repeat(3, 1fr);
-  min-block-size:100vh;
+  block-size:100vh;
   gap: 10px;
 
   &::before {
@@ -267,10 +267,6 @@
 @media (width >= 768px) and (width < 1024px) {
   .main-section-item-what {
     grid-column: 1 / span 3;
-  }
-
-  .main-section-item-what {
-    grid-column: 1 / 4;
   }
 }
 

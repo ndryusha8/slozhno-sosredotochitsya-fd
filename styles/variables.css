@@ -8,9 +8,6 @@
   --weight-font-bold: 700;
   --weight-font-regular: 400;
   --main-font-size: 18px;
-}
-
-:root {
   --background-image-page: url("../images/cover-image-dark.png");
   --primary: #ff0070;
   --secondary: #db00ff;
