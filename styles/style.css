@@ -82,7 +82,8 @@
 
 .header__theme-menu-list {
   display: flex;
-  gap: 10px;
+  gap: 12px;
+  min-inline-size: 225px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -90,11 +91,13 @@
 
 .header__theme-menu-button {
   border: none;
-  padding: 2px 13px;
+  padding: 2px 12px;
   color: var(--tertiary);
   font-size: 18px;
   line-height: 100%;
+  letter-spacing: 1px;
   background-color: transparent;
+  text-align: center;
   text-transform: lowercase;
 }
 
@@ -139,6 +142,10 @@
 .main,
 .footer {
   margin-top: 60px;
+}
+
+.main {
+  padding: 0 20px;
 }
 
 .main-section {
@@ -191,7 +198,7 @@
 }
 
 .main-section-image-container {
-  grid-template-rows: repeat(3, 1fr);
+  block-size: 142vh;
   gap: 20px;
 }
 
