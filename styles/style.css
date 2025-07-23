@@ -4,7 +4,6 @@
   margin: 0;
   padding: 0;
   font-family: var(--main-font), sans-serif;
-  font-weight: var(--weight-font-regular);
   font-size: var(--main-font-size);
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
   background-image: var(--background-image-page);
@@ -306,6 +305,11 @@
     margin: 0;
   }
 
+  .header__theme-text {
+    max-width: 364px;
+    margin-top: 40px;
+  }
+
   .main-section-item-what {
     grid-column: 1 / span 3;
   }
@@ -316,11 +320,6 @@
 
   .main-content-text {
     max-inline-size: 100%;
-  }
-
-  .header__theme-text {
-    max-width: 364px;
-    margin-top: 40px;
   }
 
   .main-section-item .main-content-text {
@@ -368,6 +367,11 @@
     right: 20px;
   }
 
+  .header__theme-title {
+    margin: 56px 0;
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  }
+
   .header__theme-text {
     margin: 0;
     min-inline-size: 100%;
@@ -395,11 +399,6 @@
 
   .main-section-item-what {
     grid-column: 1 / span 3;
-  }
-
-  .header__theme-title {
-    margin: 56px 0;
-    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   }
 
   .main-section-image-container {
