@@ -1,12 +1,10 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
   margin: 0;
   padding: 0;
-  font-family: var(--main-font), sans-serif;
+  font-family: var(--main-font), monospace;
   font-size: var(--main-font-size);
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
   background-image: var(--background-image-page);
+  background-color: var(--background-color);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -21,17 +19,36 @@
   block-size: 100vh;
 }
 
-.header::before {
-  content: var(--text-content);
+.rec-container {
   position: absolute;
-  top: 23px;
-  right: 48px;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  inline-size: 60px;
+  block-size: 26px;
+}
+
+.rec-container::before {
+  content: var(--text-content);
   display: var(--display-vision);
   color: var(--text-primary);
 }
 
-.header::after,
-.footer::before {
+.rec-container::after {
+  content: "";
+  z-index: 2;
+  display: var(--display-vision);
+  border-radius: 50%;
+  box-shadow: 0 0 4px 2px var(--primary);
+  color: var(--text-primary);
+  background-color: var(--primary);
+  inline-size: 8px;
+  block-size: 8px;
+}
+
+.objective-item::after {
   content: "";
   position: absolute;
   bottom: 20px;
@@ -42,8 +59,7 @@
   block-size: 25px;
 }
 
-.header__theme-menu::after,
-.footer::after {
+.objective-item::before {
   content: "";
   position: absolute;
   top: 20px;
@@ -54,21 +70,6 @@
   color: var(--text-primary);
   inline-size: 25px;
   block-size: 25px;
-}
-
-.header__theme-menu::before {
-  content: "";
-  position: absolute;
-  top: 28px;
-  right: 28px;
-  z-index: 2;
-  display: var(--display-vision);
-  border-radius: 50%;
-  box-shadow: 0 0 4px 2px var(--primary);
-  color: var(--text-primary);
-  background-color: var(--primary);
-  inline-size: 8px;
-  block-size: 8px;
 }
 
 .header__theme-menu {
@@ -91,7 +92,7 @@
 .header__theme-menu-button {
   border: none;
   padding: 2px 12px;
-  color: var(--tertiary);
+  color: var(--text-primary);
   font-size: 18px;
   line-height: 100%;
   letter-spacing: 1px;
@@ -106,11 +107,29 @@
 }
 
 .header__theme-menu-button:focus {
-  border-bottom: 1px solid var(--tertiary);
+  outline: 0;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid var(--text-primary);
 }
 
 .header__theme-menu-button_active {
-  outline: 1px solid var(--tertiary);
+  outline: 1px solid var(--text-primary);
+  pointer-events: none;
+}
+
+.link {
+  text-shadow: 2px 2px var(--primary);
+  text-decoration: none;
+}
+
+.link:hover {
+  border-bottom: 1px solid var(--text-primary);
+}
+
+.link:focus-visible {
+  outline: 1px solid var(--text-secondary);
 }
 
 .title-decor {
@@ -130,12 +149,12 @@
 .header__theme-text {
   justify-self: flex-end;
   margin: 0 20px 0 0;
+  margin-top: 45px;
   font-weight: var(--weight-font-bold);
   line-height: 130%;
   inline-size: 50%;
   max-inline-size: 491px;
   block-size: min-content;
-  margin-top: 45px;
 }
 
 .main,
@@ -144,6 +163,9 @@
 }
 
 .main {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
   padding: 0 20px;
 }
 
@@ -165,6 +187,15 @@
   font-weight: var(--weight-font-bold);
   font-size: var(--main-font-size);
   line-height: 130%;
+}
+
+.main-section-title-who {
+  grid-row: 1 / span 2;
+}
+
+.main-content-title-who {
+  grid-column: 2 / span 2;
+  block-size: min-content;
 }
 
 .main-section-list {
@@ -189,10 +220,6 @@
   inline-size: 100%;
 }
 
-.padding-top-80 {
-  padding-top: 80px;
-}
-
 .main-section-title-what {
   grid-column: 1 / span 1;
 }
@@ -209,7 +236,7 @@
   font-weight: var(--weight-font-regular);
 }
 
-.grid-columns {
+.main-section-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
@@ -218,15 +245,15 @@
 .main-section-image-container {
   grid-column: 1 / span 3;
   gap: 20px;
-  block-size: 142vh;
 }
 
 .image-section-title {
   grid-column: 1 / span 3;
 }
 
-.image-size-100 {
+.main-section-image {
   object-fit: cover;
+  object-position: center;
   inline-size: 100%;
   block-size: 100%;
 }
@@ -262,7 +289,6 @@
   justify-content: center;
   align-items: center;
   inline-size: 100%;
-  block-size: 100vh;
 }
 
 .footer-title {
@@ -273,33 +299,13 @@
 
 .header,
 .footer {
-  min-block-size: 100vh;
-}
-
-@media(height >= 1024px) {
-  .header,
-  .footer {
-    min-block-size: 1024px;
-  }
-}
-
-@media(height >= 768px) {
-  .header,
-  .footer {
-    min-block-size: 768px;
-  }
-}
-
-@media(height >= 668px) {
-  .header,
-  .footer {
-    min-block-size: 668px;
-  }
+  block-size: 100vh;
+  min-block-size: 668px;
 }
 
 @media (width < 1024px) {
-  .header__theme-title {
-    block-size: 100%;
+  .header {
+    gap: 0;
   }
 
   .header__theme-menu {
@@ -315,17 +321,20 @@
     align-items: end;
     padding-right: 21px;
   }
-}
-
-@media (width >= 768px) and (width < 1024px) {
-  .header {
-    gap: 0;
-  }
 
   .header__theme-title {
     display: flex;
     align-items: center;
     margin: 0;
+    block-size: 100%;
+  }
+
+  .main-content-title-who {
+    margin-left: 10px;
+  }
+
+  .main-section-list {
+    padding-left: 10px;
   }
 
   .header__theme-text {
@@ -335,10 +344,6 @@
 
   .main-section-item-what {
     grid-column: 1 / span 3;
-  }
-
-  .main-section-image-container {
-    block-size: 80vh;
   }
 
   .main-content-text {
@@ -352,12 +357,12 @@
 
 @media (width < 768px) {
   .header {
-    gap: 0;
+    gap: 55px;
     padding: 0 10px;
   }
 
-  .padding-top-80 {
-    padding-top: 50px;
+  .header__theme-title {
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   }
 
   .header__theme-menu {
@@ -368,26 +373,19 @@
     padding-right: 0;
   }
 
-  .header::before {
-    top: 10px;
-    right: 39px;
-  }
-
-  .header::after,
-  .footer::before {
-    bottom: 10px;
-    left: 10px;
-  }
-
-  .header__theme-menu::after,
-  .footer::after {
+  .rec-container {
     top: 10px;
     right: 10px;
   }
 
-  .header__theme-menu::before {
-    top: 20px;
-    right: 20px;
+  .objective-item::after {
+    bottom: 10px;
+    left: 10px;
+  }
+
+  .objective-item::before {
+    top: 10px;
+    right: 10px;
   }
 
   .header__theme-text {
@@ -396,11 +394,12 @@
   }
 
   .main {
+    gap: 50px;
     margin-top: 40px;
     padding: 0 10px;
   }
 
-  .grid-columns,
+  .main-section-container,
   .main-section,
   .main-section-image-container {
     grid-template-columns: 1fr;
@@ -413,15 +412,21 @@
 
   .main-section-list {
     grid-column: 1 / span 1;
+    padding-left: 0;
   }
 
   .main-section-item-what {
     grid-column: 1 / span 3;
   }
 
-  .header__theme-title {
-    margin: 56px 0;
-    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  .main-section-title-who {
+    grid-row: 1 / span 1;
+  }
+
+  .main-content-title-who {
+    grid-column: 1;
+    grid-row: 2 / span 1;
+    margin-left: 0;
   }
 
   .main-section-image-container {
@@ -433,9 +438,9 @@
     grid-row: auto;
   }
 
-  .main-section:last-child,
+  .main-image-section,
   .main-section-image-container {
-    gap: 10px !important;
+    gap: 10px;
   }
 
   .footer {

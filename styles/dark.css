@@ -6,6 +6,7 @@
 
 :root.theme-dark {
   --background-image-page: url("../images/cover-image-dark.png");
+  --background-color: #000028;
   --primary: #ff0070;
   --secondary: #db00ff;
   --tertiary: rgba(255, 0, 112, 0.4);
