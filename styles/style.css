@@ -276,6 +276,27 @@
   min-block-size: 100vh;
 }
 
+@media(height >= 1024px) {
+  .header,
+  .footer {
+    min-block-size: 1024px;
+  }
+}
+
+@media(height >= 768px) {
+  .header,
+  .footer {
+    min-block-size: 768px;
+  }
+}
+
+@media(height >= 668px) {
+  .header,
+  .footer {
+    min-block-size: 668px;
+  }
+}
+
 @media (width < 1024px) {
   .header__theme-title {
     block-size: 100%;
