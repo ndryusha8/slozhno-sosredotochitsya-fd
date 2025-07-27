@@ -1,10 +1,10 @@
 .page {
-  margin: 0;
+  display: block;
   padding: 0;
   font-family: var(--main-font), monospace;
   font-size: var(--main-font-size);
-  background-image: var(--background-image-page);
   background-color: var(--background-color);
+  background-image: var(--background-image-page);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -120,12 +120,12 @@
 }
 
 .link {
-  text-shadow: 2px 2px var(--primary);
   text-decoration: none;
+  text-shadow: 2px 2px var(--primary);
 }
 
 .link:hover {
-  border-bottom: 1px solid var(--text-primary);
+  border-bottom: 1px solid var(--text-secondary);
 }
 
 .link:focus-visible {
@@ -346,12 +346,9 @@
     grid-column: 1 / span 3;
   }
 
-  .main-content-text {
-    max-inline-size: 100%;
-  }
 
   .main-section-item .main-content-text {
-    max-inline-size: 472px;
+    inline-size: 100%;
   }
 }
 
